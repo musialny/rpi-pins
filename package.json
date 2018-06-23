@@ -1,0 +1,26 @@
+{
+  "name": "rpi-pins",
+  "version": "0.1.0",
+  "description": "Raspberry Pi GPIO Pins + GPIO Interfaces in Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Musialny/rpi-pins.git"
+  },
+  "keywords": [
+    "raspberrypi",
+    "raspberry",
+    "pi",
+    "gpio",
+    "wiringpi"
+  ],
+  "author": "Łukasz Musiał <lukasz.musial.tirek@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Musialny/rpi-pins/issues"
+  },
+  "homepage": "https://github.com/Musialny/rpi-pins#readme"
+}
