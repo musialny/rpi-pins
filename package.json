@@ -4,7 +4,8 @@
   "description": "Raspberry Pi GPIO Pins + GPIO Interfaces in Node.js",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node .",
+    "build": "node-gyp configure build"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,10 @@
   ],
   "author": "Łukasz Musiał <lukasz.musial.tirek@gmail.com>",
   "license": "MIT",
+  "dependencies": {
+    "nan": "^2.10.0",
+    "node-gyp": "^3.7.0"
+  },
   "bugs": {
     "url": "https://github.com/Musialny/rpi-pins/issues"
   },
