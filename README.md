@@ -49,8 +49,9 @@ rpi-pins using wiring pi pin numeration
     
 pinMode:
 
-    PIN.MODE.OUTPUT
     PIN.MODE.INPUT
+    PIN.MODE.OUTPUT
+    PIN.MODE.PWM_OUTPUT
     
 **Pull Up or Pull Down input pin**
 
@@ -68,12 +69,19 @@ pullMode:
     
 **Write output pin state**
 
-    GPIO.Write(pinNumber, pullMode);
+    GPIO.Write(pinNumber, pinMode);
     
 pinMode:
 
-    PIN.MODE.OUTPUT
-    PIN.MODE.INPUT
+    PIN.MODE.HIGH
+    PIN.MODE.LOW
+
+**Write PWM_OUTPUT pin state**
+
+    GPIO.PWM(pinNumber, value);
+
+PWM value range is 0-1024.
+Check which pins in your Raspberry Pi have PWM output.
 
 ## License
 
