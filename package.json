@@ -2,7 +2,7 @@
   "name": "rpi-pins",
   "version": "0.1.0",
   "description": "Raspberry Pi GPIO Pins + GPIO Interfaces in Node.js",
-  "main": "index.js",
+  "main": "rpi-pins.js",
   "scripts": {
     "test": "node test/test.js",
     "build": "node-gyp configure build"
