@@ -34,6 +34,46 @@ rpi-pins using wiring pi pin numeration
     {
         GPIO.Write(27, PIN.MODE.LOW);
     }
+    
+**Import rpi-pins**
+
+    const PIN = require("rpi-pins");
+    
+**Create instance of GPIO class**
+
+    const GPIO = new PIN.GPIO();
+    
+**Set pin mode**
+
+    GPIO.SetPin(pinNumber, pinMode);
+    
+pinMode:
+
+    PIN.MODE.OUTPUT
+    PIN.MODE.INPUT
+    
+**Pull Up or Pull Down input pin**
+
+    GPIO.PullControl(pinNumber, pullMode);
+    
+pullMode:
+
+    PIN.MODE.PULL_UP
+    PIN.MODE.PULL_DOWN
+    PIN.MODE.PULL_OFF
+    
+**Read input pin state**
+
+    var state = GPIO.Read(pin);
+    
+**Write output pin state**
+
+    GPIO.Write(pinNumber, pullMode);
+    
+pinMode:
+
+    PIN.MODE.OUTPUT
+    PIN.MODE.INPUT
 
 ## License
 
