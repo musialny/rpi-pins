@@ -15,9 +15,9 @@ If command not exist install wiring pi using
 
     sudo apt-get install wiringpi
 
-## Usage
+###### rpi-pins using wiring pi pin numeration
 
-    **Here is example code (rpi-pins using wiring pi pin numeration):**
+## Usage
 
     const PIN = require("../rpi-pins");
 
