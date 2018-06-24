@@ -82,6 +82,7 @@ pinMode:
 
 PWM value range is 0-1024.
 Check which pins in your Raspberry Pi have PWM output.
+If you using PWM, you have to run node/npm as sudo.
 
 ## License
 
