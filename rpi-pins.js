@@ -14,10 +14,11 @@ class GPIO
 {
     constructor()
     {
-        if (PINS.Init() > -1)
+        PINS.Init();
+        /*if (PINS.Init() > -1)
             return true;
         else
-            return false;
+            return false;*/
     }
 
     SetPin(pin, mode)
