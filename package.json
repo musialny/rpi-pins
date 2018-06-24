@@ -4,7 +4,7 @@
   "description": "Raspberry Pi GPIO Pins + GPIO Interfaces in Node.js",
   "main": "index.js",
   "scripts": {
-    "start": "node .",
+    "test": "node test/test.js",
     "build": "node-gyp configure build"
   },
   "repository": {
@@ -14,6 +14,8 @@
   "keywords": [
     "raspberrypi",
     "raspberry",
+    "raspi",
+    "rpi",
     "pi",
     "gpio",
     "wiringpi"
