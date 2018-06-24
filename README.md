@@ -18,7 +18,7 @@ If command not exist install wiring pi using
 ## Usage
 rpi-pins using wiring pi pin numeration
 
-    const PIN = require("../rpi-pins");
+    const PIN = require("rpi-pins");
 
     const GPIO = new PIN.GPIO();
     GPIO.SetPin(27, PIN.MODE.OUTPUT);
