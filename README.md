@@ -76,7 +76,7 @@ pinMode:
     PIN.MODE.HIGH
     PIN.MODE.LOW
 
-**Write PWM_OUTPUT pin state**
+**Write PWM output pin state**
 
     GPIO.PWM(pinNumber, value);
 
