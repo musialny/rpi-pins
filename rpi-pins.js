@@ -5,6 +5,7 @@ const LOW = 0;
 
 const INPUT = 1;
 const OUTPUT = 0;
+const PWM_OUTPUT = 2;
 
 const PULL_UP = 1;
 const PULL_DOWN = 0;
@@ -27,6 +28,8 @@ class GPIO
             PINS.SetIn(pin);
         else if (mode == 0)
             PINS.SetOut(pin);
+        else if (mode == 2)
+            PINS.SetPWM(pin);
     }
 
     Write(pin, state)
@@ -51,6 +54,16 @@ class GPIO
         else if (mode == 2)
             PINS.PullOff(pin);
     }
+
+    PWM(pin, value)
+    {
+        PINS.PWM(pin, value);
+    }
+
+    Wait(ms)
+    {
+        PINS.Wait(ms);
+    }
 }
 
 class MODE
@@ -74,6 +87,10 @@ class MODE
     static get OUTPUT()
     {
         return OUTPUT;
+    }
+    static get PWM_OUTPUT()
+    {
+        return PWM_OUTPUT;
     }
 
 
