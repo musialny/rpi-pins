@@ -15,54 +15,112 @@ class GPIO
 {
     constructor()
     {
-        PINS.Init();
-        /*if (PINS.Init() > -1)
-            return true;
-        else
-            return false;*/
+        let result = PINS.Init();
+        if (result < 0)
+            throw new Error("GPIO Init exit with code: " + result);
     }
 
     SetPin(pin, mode)
     {
-        if (mode == 1)
-            PINS.SetIn(pin);
-        else if (mode == 0)
-            PINS.SetOut(pin);
-        else if (mode == 2)
-            PINS.SetPWM(pin);
+        if(arguments.length >= 2)
+        {
+            if (Number.isInteger(pin) && Number.isInteger(mode))
+            {
+                if (mode == 1)
+                    PINS.SetIn(pin);
+                else if (mode == 0)
+                    PINS.SetOut(pin);
+                else if (mode == 2)
+                    PINS.SetPWM(pin);
+            }
+            else
+                throw new Error("SetPin: Argument(s) have to be integer!");
+        }
+        else
+            throw new Error("SetPin: Too few arguments!");
     }
 
     Write(pin, state)
     {
-        if (state == 1)
-            PINS.On(pin);
-        else if (state == 0)
-            PINS.Off(pin);
+        if(arguments.length >= 2)
+        {
+            if (Number.isInteger(pin) && Number.isInteger(state))
+            {
+                if (state == 1)
+                    PINS.On(pin);
+                else if (state == 0)
+                    PINS.Off(pin);
+            }
+            else
+                throw new Error("Write: Argument(s) have to be integer!");
+        }
+        else
+            throw new Error("Write: Too few arguments!");
     }
 
     Read(pin)
     {
-        return PINS.In(pin);
+        if(arguments.length >= 1)
+        {
+            if (Number.isInteger(pin))
+            {
+                return PINS.In(pin);
+            }
+            else
+                throw new Error("Read: Argument have to be integer!");
+        }
+        else
+            throw new Error("Read: Too few arguments!");
     }
 
     PullControl(pin, mode)
     {
-        if (mode == 1)
-            PINS.PullUp(pin);
-        else if (mode == 0)
-            PINS.PullDown(pin);
-        else if (mode == 2)
-            PINS.PullOff(pin);
+        if(arguments.length >= 2)
+        {
+            if (Number.isInteger(pin) && Number.isInteger(mode))
+            {
+                if (mode == 1)
+                    PINS.PullUp(pin);
+                else if (mode == 0)
+                    PINS.PullDown(pin);
+                else if (mode == 2)
+                    PINS.PullOff(pin);
+            }
+            else
+                throw new Error("PullControl: Argument(s) have to be integer!");
+        }
+        else
+            throw new Error("PullControl: Too few arguments!");
     }
 
     PWM(pin, value)
     {
-        PINS.PWM(pin, value);
+        if(arguments.length >= 2)
+        {
+            if (Number.isInteger(pin) && Number.isInteger(value))
+            {
+                PINS.PWM(pin, value);
+            }
+            else
+                throw new Error("PWM: Argument(s) have to be integer!");
+        }
+        else
+            throw new Error("PWM: Too few arguments!");
     }
 
     Wait(ms)
     {
-        PINS.Wait(ms);
+        if(arguments.length >= 1)
+        {
+            if (Number.isInteger(ms))
+            {
+                PINS.Wait(ms);
+            }
+            else
+                throw new Error("Wait: Argument have to be integer!");
+        }
+        else
+            throw new Error("Wait: Too few arguments!");
     }
 }
 
