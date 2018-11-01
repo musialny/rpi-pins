@@ -26,12 +26,9 @@ rpi-pins using wiring pi pin numeration
 
     GPIO.PullControl(31, PIN.MODE.PULL_UP);
 
-    if (GPIO.Read(31))
-    {
+    if (GPIO.Read(31)) {
         GPIO.Write(27, PIN.MODE.HIGH);
-    }
-    else if (!GPIO.Read(31))
-    {
+    } else if (!GPIO.Read(31)) {
         GPIO.Write(27, PIN.MODE.LOW);
     }
     
@@ -65,7 +62,7 @@ pullMode:
     
 **Read input pin state**
 
-    var state = GPIO.Read(pin);
+    let state = GPIO.Read(pin);
     
 **Write output pin state**
 
@@ -86,4 +83,4 @@ If you using PWM, you have to run node/npm as sudo.
 
 ## License
 
-    MIT
+    Apache-2.0
