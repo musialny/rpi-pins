@@ -1,68 +1,55 @@
 #include <nan.h>
 #include <wiringPi.h>
 
-NAN_METHOD(Init)
-{
+NAN_METHOD(Init) {
   info.GetReturnValue().Set(wiringPiSetup());
 }
 
-NAN_METHOD(SetOut)
-{
+NAN_METHOD(SetOut) {
   pinMode(info[0]->NumberValue(), OUTPUT);
 }
 
-NAN_METHOD(SetIn)
-{
+NAN_METHOD(SetIn) {
   pinMode(info[0]->NumberValue(), INPUT);
 }
 
-NAN_METHOD(SetPWM)
-{
+NAN_METHOD(SetPWM) {
   pinMode(info[0]->NumberValue(), PWM_OUTPUT);
 }
 
-NAN_METHOD(On)
-{
+NAN_METHOD(On) {
   digitalWrite(info[0]->NumberValue(), HIGH);
 }
 
-NAN_METHOD(Off)
-{
+NAN_METHOD(Off) {
   digitalWrite(info[0]->NumberValue(), LOW);
 }
 
-NAN_METHOD(In)
-{
+NAN_METHOD(In) {
   info.GetReturnValue().Set(digitalRead(info[0]->NumberValue()));
 }
 
-NAN_METHOD(PullUp)
-{
+NAN_METHOD(PullUp) {
   pullUpDnControl(info[0]->NumberValue(), PUD_UP);
 }
 
-NAN_METHOD(PullDown)
-{
+NAN_METHOD(PullDown) {
   pullUpDnControl(info[0]->NumberValue(), PUD_DOWN);
 }
 
-NAN_METHOD(PullOff)
-{
+NAN_METHOD(PullOff) {
   pullUpDnControl(info[0]->NumberValue(), PUD_OFF);
 }
 
-NAN_METHOD(PWM)
-{
+NAN_METHOD(PWM) {
   pwmWrite(info[0]->NumberValue(), info[1]->NumberValue());
 }
 
-NAN_METHOD(Wait)
-{
+NAN_METHOD(Wait) {
   delay(info[0]->NumberValue());
 }
 
-NAN_MODULE_INIT(InitModule)
-{
+NAN_MODULE_INIT(InitModule) {
   NAN_EXPORT(target, Init);
 
   NAN_EXPORT(target, SetOut);
