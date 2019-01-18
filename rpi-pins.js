@@ -18,14 +18,14 @@ class GPIO {
             throw new Error("GPIO Init exit with code: " + result);
     }
 
-    SetPin(pin, mode) {
+    setPin(pin, mode) {
         if(arguments.length >= 2) {
             if (Number.isInteger(pin) && Number.isInteger(mode)) {
-                if (mode == 1)
+                if (mode === 1)
                     PINS.SetIn(pin);
-                else if (mode == 0)
+                else if (mode === 0)
                     PINS.SetOut(pin);
-                else if (mode == 2)
+                else if (mode === 2)
                     PINS.SetPWM(pin);
             } else
                 throw new Error("SetPin: Argument(s) have to be integer!");
@@ -33,12 +33,12 @@ class GPIO {
             throw new Error("SetPin: Too few arguments!");
     }
 
-    Write(pin, state) {
+    write(pin, state) {
         if(arguments.length >= 2) {
             if (Number.isInteger(pin) && Number.isInteger(state)) {
-                if (state == 1)
+                if (state === 1)
                     PINS.On(pin);
-                else if (state == 0)
+                else if (state === 0)
                     PINS.Off(pin);
             } else
                 throw new Error("Write: Argument(s) have to be integer!");
@@ -46,7 +46,7 @@ class GPIO {
             throw new Error("Write: Too few arguments!");
     }
 
-    Read(pin) {
+    read(pin) {
         if(arguments.length >= 1) {
             if (Number.isInteger(pin)) {
                 return PINS.In(pin);
@@ -56,14 +56,14 @@ class GPIO {
             throw new Error("Read: Too few arguments!");
     }
 
-    PullControl(pin, mode) {
+    pullControl(pin, mode) {
         if(arguments.length >= 2) {
             if (Number.isInteger(pin) && Number.isInteger(mode)) {
-                if (mode == 1)
+                if (mode === 1)
                     PINS.PullUp(pin);
-                else if (mode == 0)
+                else if (mode === 0)
                     PINS.PullDown(pin);
-                else if (mode == 2)
+                else if (mode === 2)
                     PINS.PullOff(pin);
             } else
                 throw new Error("PullControl: Argument(s) have to be integer!");
@@ -71,7 +71,7 @@ class GPIO {
             throw new Error("PullControl: Too few arguments!");
     }
 
-    PWM(pin, value) {
+    pwm(pin, value) {
         if(arguments.length >= 2) {
             if (Number.isInteger(pin) && Number.isInteger(value)) {
                 PINS.PWM(pin, value);
@@ -81,7 +81,7 @@ class GPIO {
             throw new Error("PWM: Too few arguments!");
     }
 
-    Wait(ms) {
+    wait(ms) {
         if(arguments.length >= 1) {
             if (Number.isInteger(ms)) {
                 PINS.Wait(ms);
