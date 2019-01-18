@@ -21,15 +21,15 @@ rpi-pins using wiring pi pin numeration
     const PIN = require("rpi-pins");
 
     const GPIO = new PIN.GPIO();
-    GPIO.SetPin(27, PIN.MODE.OUTPUT);
-    GPIO.SetPin(31, PIN.MODE.INPUT);
+    GPIO.setPin(27, PIN.MODE.OUTPUT);
+    GPIO.setPin(31, PIN.MODE.INPUT);
 
-    GPIO.PullControl(31, PIN.MODE.PULL_UP);
+    GPIO.pullControl(31, PIN.MODE.PULL_UP);
 
-    if (GPIO.Read(31)) {
-        GPIO.Write(27, PIN.MODE.HIGH);
-    } else if (!GPIO.Read(31)) {
-        GPIO.Write(27, PIN.MODE.LOW);
+    if (GPIO.read(31)) {
+        GPIO.write(27, PIN.MODE.HIGH);
+    } else if (!GPIO.read(31)) {
+        GPIO.write(27, PIN.MODE.LOW);
     }
     
 **Import rpi-pins**
@@ -42,7 +42,7 @@ rpi-pins using wiring pi pin numeration
     
 **Set pin mode**
 
-    GPIO.SetPin(pinNumber, pinMode);
+    GPIO.setPin(pinNumber, pinMode);
     
 pinMode:
 
@@ -52,7 +52,7 @@ pinMode:
     
 **Pull Up or Pull Down input pin**
 
-    GPIO.PullControl(pinNumber, pullMode);
+    GPIO.pullControl(pinNumber, pullMode);
     
 pullMode:
 
@@ -62,11 +62,11 @@ pullMode:
     
 **Read input pin state**
 
-    let state = GPIO.Read(pin);
+    let state = GPIO.read(pin);
     
 **Write output pin state**
 
-    GPIO.Write(pinNumber, pinMode);
+    GPIO.write(pinNumber, pinMode);
     
 pinMode:
 
@@ -75,7 +75,7 @@ pinMode:
 
 **Write PWM output pin state**
 
-    GPIO.PWM(pinNumber, value);
+    GPIO.pwm(pinNumber, value);
 
 PWM value range is 0-1024.
 Check which pins in your Raspberry Pi have PWM output.
