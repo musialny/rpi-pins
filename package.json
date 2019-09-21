@@ -1,6 +1,6 @@
 {
   "name": "rpi-pins",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Raspberry Pi GPIO Pins",
   "main": "rpi-pins.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "gpio",
     "wiringpi"
   ],
-  "author": "Łukasz Musiał <musialny@gmail.com>",
+  "author": "musialny.dev",
   "license": "Apache-2.0",
   "dependencies": {
     "nan": "^2.10.0",
